@@ -1,0 +1,4 @@
+D:/QtApps/Game1/cmake-build-debug/CMakeFiles/dkj.dir
+D:/QtApps/Game1/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/QtApps/Game1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/QtApps/Game1/cmake-build-debug/CMakeFiles/dkj_autogen.dir

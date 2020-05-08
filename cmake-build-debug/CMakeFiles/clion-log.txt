@@ -1,0 +1,4 @@
+"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug CMAKE_PREFIX_PATH=D:\Qt\5.14.2\mingw73_64 -G "CodeBlocks - MinGW Makefiles" D:\QtApps\Game1
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/QtApps/Game1/cmake-build-debug

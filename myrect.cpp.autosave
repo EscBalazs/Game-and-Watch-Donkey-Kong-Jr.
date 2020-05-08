@@ -1,0 +1,40 @@
+#include "myrect.h"
+#include <QGraphicsScene>
+#include <QKeyEvent>
+#include <QDebug>
+
+void Monkey::keyPressEvent(QKeyEvent *event)
+{
+    qDebug() << event->key();
+
+    if (event->key() == Qt::Key_Left)
+    {
+        setPos(x() - 10, y());
+        setBrush(Qt::black);
+    }
+    if (event->key() == Qt::Key_Right)
+    {
+        setPos(x() + 10, y());
+        setBrush(Qt::white);
+    }
+    if (event->key() == Qt::Key_Up)
+    {
+        setPos(x(), y() - 10);
+        setBrush(Qt::blue);
+    }
+    if (event->key() == Qt::Key_Down)
+    {
+        setPos(x(), y() + 10);
+        setBrush(Qt::green);
+    }
+}
+
+void Monkey::makeRed()
+{
+    setBrush(Qt::red);
+}
+
+void Monkey::makeWhite()
+{
+    setBrush(Qt::white);
+}

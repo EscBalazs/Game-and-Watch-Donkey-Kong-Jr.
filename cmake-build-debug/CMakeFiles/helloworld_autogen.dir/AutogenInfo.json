@@ -1,0 +1,89 @@
+{
+	"BUILD_DIR" : "D:/QtApps/Game1/cmake-build-debug/helloworld_autogen",
+	"CMAKE_BINARY_DIR" : "D:/QtApps/Game1/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/QtApps/Game1/cmake-build-debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/QtApps/Game1",
+	"CMAKE_EXECUTABLE" : "C:/Program Files/JetBrains/CLion 2020.1/bin/cmake/win/bin/cmake.exe",
+	"CMAKE_SOURCE_DIR" : "D:/QtApps/Game1",
+	"HEADERS" : 
+	[
+		[ "D:/QtApps/Game1/bird.h", "MU", "EWIEGA46WW/moc_bird.cpp" ],
+		[ "D:/QtApps/Game1/birdevent.h", "MU", "EWIEGA46WW/moc_birdevent.cpp" ],
+		[ "D:/QtApps/Game1/game.h", "MU", "EWIEGA46WW/moc_game.cpp" ],
+		[ "D:/QtApps/Game1/monkey.h", "MU", "EWIEGA46WW/moc_monkey.cpp" ],
+		[
+			"D:/QtApps/Game1/monkeyfallevent.h",
+			"MU",
+			"EWIEGA46WW/moc_monkeyfallevent.cpp"
+		],
+		[
+			"D:/QtApps/Game1/monkeymovehandler.h",
+			"MU",
+			"EWIEGA46WW/moc_monkeymovehandler.cpp"
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "D:/QtApps/Game1/cmake-build-debug/helloworld_autogen/include",
+	"MOC_COMPILATION_FILE" : "D:/QtApps/Game1/cmake-build-debug/helloworld_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"D:/QtApps/Game1/cmake-build-debug",
+		"D:/QtApps/Game1",
+		"D:/Qt/5.14.2/mingw73_64/include",
+		"D:/Qt/5.14.2/mingw73_64/include/QtWidgets",
+		"D:/Qt/5.14.2/mingw73_64/include/QtGui",
+		"D:/Qt/5.14.2/mingw73_64/include/QtANGLE",
+		"D:/Qt/5.14.2/mingw73_64/include/QtCore",
+		"D:/Qt/5.14.2/mingw73_64/mkspecs/win32-g++",
+		"D:/mingw-w64/x86_64-7.3.0-posix-seh-rt_v5-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++",
+		"D:/mingw-w64/x86_64-7.3.0-posix-seh-rt_v5-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32",
+		"D:/mingw-w64/x86_64-7.3.0-posix-seh-rt_v5-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward",
+		"D:/mingw-w64/x86_64-7.3.0-posix-seh-rt_v5-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/7.3.0/include",
+		"D:/mingw-w64/x86_64-7.3.0-posix-seh-rt_v5-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed",
+		"D:/mingw-w64/x86_64-7.3.0-posix-seh-rt_v5-rev0/mingw64/x86_64-w64-mingw32/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : true,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"D:/mingw-w64/x86_64-7.3.0-posix-seh-rt_v5-rev0/mingw64/bin/g++.exe",
+		"-dM",
+		"-E",
+		"-c",
+		"C:/Program Files/JetBrains/CLion 2020.1/bin/cmake/win/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "D:/QtApps/Game1/cmake-build-debug/helloworld_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 4,
+	"PARSE_CACHE_FILE" : "D:/QtApps/Game1/cmake-build-debug/CMakeFiles/helloworld_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "D:/Qt/5.14.2/mingw73_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "D:/Qt/5.14.2/mingw73_64/bin/uic.exe",
+	"QT_VERSION_MAJOR" : 5,
+	"SETTINGS_FILE" : "D:/QtApps/Game1/cmake-build-debug/CMakeFiles/helloworld_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[ "D:/QtApps/Game1/bird.cpp", "MU" ],
+		[ "D:/QtApps/Game1/birdevent.cpp", "MU" ],
+		[ "D:/QtApps/Game1/game.cpp", "MU" ],
+		[ "D:/QtApps/Game1/main.cpp", "MU" ],
+		[ "D:/QtApps/Game1/monkey.cpp", "MU" ],
+		[ "D:/QtApps/Game1/monkeyfallevent.cpp", "MU" ],
+		[ "D:/QtApps/Game1/monkeymovehandler.cpp", "MU" ]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}
