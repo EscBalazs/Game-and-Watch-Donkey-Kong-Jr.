@@ -11,7 +11,13 @@ int main(int argc, char ** argv)
     QApplication app(argc, argv);
 
     game = new Game();
-    game->setGeometry(100, 100, 500, 500);
+    game->setFixedSize(488, 326);
+
+    QPixmap background = game->getSprite().copy(576, 93, 488, 326);
+    QPalette palette;
+    palette.setBrush(game->backgroundRole(), QBrush(background));
+    game->setPalette(palette);
+
 
     return app.exec();
 }

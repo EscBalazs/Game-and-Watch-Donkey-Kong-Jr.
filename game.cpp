@@ -6,7 +6,6 @@
 #include "bird.h"
 #include "birdevent.h"
 #include "game.h"
-#include "key.h"
 #include "visual_items/crocodile.h"
 #include "visual_events/CrocodileEvent.h"
 #include "keyEvent.h"
@@ -15,19 +14,23 @@
 
 typedef std::pair<int, Monkey*> MonkeyType;
 typedef std::pair<int, Bird*> BirdType;
-typedef std::pair<int, Life*> LifeType;
-typedef std::pair<int, Key*> KeyType;
 typedef std::pair<int, Crocodile*> CrocodileType;
 
 Game::Game(QWidget *parent)
 {
+    // todo: only local sprite
+    mSprite = QPixmap(":/img/dkj.png");
     mainWindow = parent;
     scene = new QGraphicsScene();
-    createLifeHud(scene);
-    createMonkies(scene);
-    createBirds(scene);
-    createKeys(scene);
-    createCrocodiles(scene);
+
+    VisualMapper *visualMapper = new VisualMapper(
+                scene, mSprite, &keyContainer, &lifeContainer
+                );
+    visualMapper->map();
+
+    createMonkies();
+    createBirds();
+    createCrocodiles();
     setScene(scene);
 
     BirdEvent *birdEvent = new BirdEvent();
@@ -40,6 +43,11 @@ Game::Game(QWidget *parent)
     crocodileEvent->startMove();
 
     show();
+}
+
+QPixmap Game::getSprite()
+{
+    return mSprite;
 }
 
 void Game::triggerBeforeBirdMove(std::int16_t currentBirdId)
@@ -65,11 +73,11 @@ void Game::triggerAfterKeyMove(int16_t keyPosition)
     {
         keyPosition = 4;
     }
-    keyContainer.at(1)->inactivate();
-    keyContainer.at(2)->inactivate();
-    keyContainer.at(3)->inactivate();
-    keyContainer.at(4)->inactivate();
-    keyContainer.at(keyPosition)->activate();
+    keyContainer.at(1)->setVisible(false);
+    keyContainer.at(2)->setVisible(false);
+    keyContainer.at(3)->setVisible(false);
+    keyContainer.at(4)->setVisible(false);
+    keyContainer.at(keyPosition)->setVisible(true);
 }
 
 void Game::checkDieByBird(std::int16_t currentBirdId)
@@ -91,7 +99,7 @@ void Game::removeLifeAndRestartOrGameOver()
         mainWindow->close();
     }
 
-    lifeContainer.at(lifes)->inactivate();
+    lifeContainer.at(lifes)->setVisible(false);
     lifes--;
     setMonkeyPositionId(1);
 }
@@ -144,17 +152,7 @@ void Game::handleKeyPress(QKeyEvent *event)
     }
 }
 
-void Game::createLifeHud(QGraphicsScene *scene)
-{
-    std::list<ActiveVisualGameItem> lives;
-    lives.push_front({1, 12, -5, true});
-    lives.push_front({2, 13, -5, true});
-    lives.push_front({3, 14, -5, true});
-
-    generateActiveVisualGameItem<Life, LifeType>(lives, lifeContainer);
-}
-
-void Game::createMonkies(QGraphicsScene *scene)
+void Game::createMonkies()
 {
     std::list<ActiveVisualGameItem> monkeys;
     monkeys.push_front({1, 3, 0,  true});
@@ -180,7 +178,7 @@ void Game::createMonkies(QGraphicsScene *scene)
     generateActiveVisualGameItem<Monkey, MonkeyType>(monkeys, monkeyContainer);
 }
 
-void Game::createBirds(QGraphicsScene *scene)
+void Game::createBirds()
 {
     std::list<ActiveVisualGameItem> birds;
     birds.push_front({1, 1, -1, true});
@@ -195,18 +193,7 @@ void Game::createBirds(QGraphicsScene *scene)
     generateActiveVisualGameItem<Bird, BirdType>(birds, birdContainer);
 }
 
-void Game::createKeys(QGraphicsScene *scene)
-{
-    std::list<ActiveVisualGameItem> keys;
-    keys.push_front({1, 8, -5, true});
-    keys.push_front({2, 9, -5, false});
-    keys.push_front({3, 10, -5, false});
-    keys.push_front({4, 11, -5, false});
-
-    generateActiveVisualGameItem<Key, KeyType>(keys, keyContainer);
-}
-
-void Game::createCrocodiles(QGraphicsScene *scene)
+void Game::createCrocodiles()
 {
     std::list<ActiveVisualGameItem> crocodiles;
 
@@ -239,6 +226,7 @@ void Game::generateActiveVisualGameItem(std::list<ActiveVisualGameItem> items, s
         {
             newItem->activate();
         }
+
         container.insert(ContainerType(item.id, newItem));
         scene->addItem(newItem);
     }

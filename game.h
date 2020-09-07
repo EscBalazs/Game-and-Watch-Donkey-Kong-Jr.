@@ -8,9 +8,10 @@
 #include "monkey.h"
 #include "bird.h"
 #include "life.h"
-#include "key.h"
 #include "visual_items/crocodile.h"
 #include "monkeymovehandler.h"
+#include "src/services/VisualMapper.h"
+
 
 struct ActiveVisualGameItem
 {
@@ -25,11 +26,12 @@ class Game: public QGraphicsView
 public:
     Game(QWidget *parent = 0);
 
+    QPixmap getSprite();
     void keyPressEvent(QKeyEvent *event);
-    void createLifeHud(QGraphicsScene *scene);
-    void createMonkies(QGraphicsScene *scene);
-    void createBirds(QGraphicsScene *scene);
-    void createCrocodiles(QGraphicsScene *scene);
+    void createLifeHud();
+    void createMonkies();
+    void createBirds();
+    void createCrocodiles();
     void handleKeyPress(QKeyEvent *event);
     void checkDieByBird(std::int16_t);
 
@@ -40,8 +42,7 @@ public:
     std::int16_t scale = 25;
     std::map<int, Monkey*> monkeyContainer;
     std::map<int, Bird*> birdContainer;
-    std::map<int, Life*> lifeContainer;
-    std::map<int, Key*> keyContainer;
+    Container lifeContainer, keyContainer;
     std::map<int, Crocodile*>  crocodileContainer;
     std::int16_t currentMonkeyId = 1;
     std::int16_t currentBirdId = 1;
@@ -52,8 +53,9 @@ private:
     void removeLifeAndRestartOrGameOver();
 
     QWidget * mainWindow;
+    QPixmap mSprite;
 
-    void createKeys(QGraphicsScene *scene);
+    void createKeys();
 public slots:
     void triggerAfterCrocodileMove(std::int16_t, std::int16_t);
     void triggerBeforeBirdMove(std::int16_t);

@@ -1,9 +1,9 @@
 #ifndef KEY_H
 #define KEY_H
 
-#include <QGraphicsRectItem>
+#include <QPixmap>
 
-class Key: public QGraphicsRectItem
+class Key: public QPixmap
 {
 public:
     Key();
